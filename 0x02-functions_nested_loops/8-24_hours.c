@@ -1,7 +1,6 @@
 #include "main.h"
 /**
- *
- *
+ * jack_bauer - function
  */
 void jack_bauer(void)
 {
