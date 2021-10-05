@@ -1,5 +1,4 @@
-#include <stdio.h>
-int _putchar(char c);
+#include "main."
 /**
  * main - function
  * Return: 0
