@@ -9,25 +9,21 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	char *s1 = dest;
+	int idx, idx2;
 
-	if ((dest == NULL) && (src == NULL))
-		return (NULL);
+	for (idx = 0; dest[idx] != '\0'; idx++)
+	;
 
-	while (*s1 != '\0')
+	for (idx2 = 0; src[idx2] != '\0' && idx2 < n; idx2++)
 	{
-		s1++;
+		dest[idx] = src[idx2];
+		idx++;
 	}
 
-	while (n--)
+	if (idx2 < n)
 	{
-		if (!(*s1++ = *src++))
-		{
-			return (dest);
-		}
+		src[idx2] = '\0';
 	}
-
-	*s1 = '\0';
 
 	return (dest);
 }
