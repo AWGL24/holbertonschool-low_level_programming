@@ -9,14 +9,37 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	size_t n = strlen(needle);
+	char *a;
+	char *b;
 
-	while (haystack)
+	b = needle;
+
+	if (*b == 0)
 	{
-		if (!memcmp(haystack++, needle, n))
-		{
-			return ((char *) (haystack - 1));
-		}
+		return ((char *) (haystack));
 	}
+
+	for ( ; *haystack != 0; haystack += 1)
+	{
+		if (*haystack != *needle)
+		{
+			continue;
+		}
+
+		a = haystack;
+		while (1)
+		{
+			if (*b == 0)
+			{
+				return ((char *) haystack);
+			}
+			else if (*a++ != *b++)
+			{
+				break;
+			}
+		}
+		b = needle;
+	}
+
 	return (NULL);
 }
