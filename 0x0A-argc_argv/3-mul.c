@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	int a, b, product;
 
-	if (argc < 2)
+	if (argc <= 2)
 	{
 		printf("Error\n");
 		return (1);
@@ -20,5 +20,6 @@ int main(int argc, char *argv[])
 	b = atoi(argv[2]);
 	product = a * b;
 	printf("%d\n", product);
+
 	return (0);
 }
