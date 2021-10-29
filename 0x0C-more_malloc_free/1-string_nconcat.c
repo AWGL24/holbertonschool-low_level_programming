@@ -24,10 +24,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n >= len2)
 	{
 		n = len2;
-		start = malloc(sizeof(char) * (len + len2 + 1));
+		start = malloc(sizeof(char) * (len + len2));
 	}
 	else
-		start = malloc(sizeof(char) * (len + n + 1));
+		start = malloc(sizeof(char) * (len + n));
 	if (start == NULL)
 		return (NULL);
 	for (idx = 0; idx < len; idx++)
