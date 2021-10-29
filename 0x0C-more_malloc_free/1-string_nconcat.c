@@ -43,15 +43,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (start == NULL)
 		return (NULL);
 
-	for (idx = 0; s1[idx] != '\0'; idx++)
+	for (idx = 0; idx < len; idx++)
 	{
 		start[idx] = s1[idx];
 	}
-	for (idx2 = 0; s2[idx2] != '\0'; idx2++)
+	for (idx2 = 0; idx2 < n; idx2++)
 	{
-		start[idx] = s2[idx2];
-		idx++;
+		start[idx++] = s2[idx2];
 	}
-	start[idx] ='\0';
+	start[idx++] ='\0';
 	return (start);
 }
