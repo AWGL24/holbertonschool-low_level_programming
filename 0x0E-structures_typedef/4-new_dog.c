@@ -3,8 +3,11 @@
 int _strlen(char *s);
 char *_strcpy(char *s1, char *s2);
 /**
- *
- *
+ * new_dog - function that creates a new dog
+ * @name: dog's name
+ * @age: dog's age
+ * @owner: dog's owner
+ * Return: dog
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
