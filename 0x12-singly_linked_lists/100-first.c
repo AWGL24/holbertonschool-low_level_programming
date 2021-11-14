@@ -1,7 +1,6 @@
 #include <stdio.h>
 /**
  * premain - funs before main
- *
  */
 void __atribute__ ((constructor)) premain()
 {
