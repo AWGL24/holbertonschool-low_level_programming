@@ -1,8 +1,8 @@
 #include "lists.h"
 /**
- * add_node - function that adds a new node
+ * add_nodeint - function that adds a new node
  * @head: head of the list
- * @str: string
+ * @n: string
  * Return: new node
  */
 listint_t *add_nodeint(listint_t **head, const int n)
