@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
- * hash_dbj2 - function that applies dbj2 algorithm
+ * hash_djb2 - function that applies dbj2 algorithm
  * @str: parameter
  * Return: unsigned long int
  */
