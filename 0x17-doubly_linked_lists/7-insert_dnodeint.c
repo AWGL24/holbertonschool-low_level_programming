@@ -1,52 +1,51 @@
 #include "lists.h"
 /**
- * insert_dnodeint_at_index - inserts a new node at a given position.
- * @idx: the index of the list where the new node should be added.
- * Index starts at 0
- * @h: address of the head of the list.
- * @n: value of the node.
- * Return: the address of the new node, or NULL if it failed.
+ * insert_dnodeint_at_index - function that inserts a new node at position
+ * @h: parameter
+ * @idx: parameter
+ * @n: parameter
+ * Return: dlistint_t*
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *tmp, *new;
-	unsigned int counter = 0;
+	unsigned int count = 0;
+	dlistint_t *node, *temp;
 
-	new = malloc(sizeof(dlistint_t));
-	if (new == NULL)
+	node = malloc(sizeof(dlistint_t));
+	if (node == NULL)
 		return (NULL);
 
-	tmp = *h;
-	new->prev = NULL;
-	new->next = NULL;
-	new->n = n;
+	temp = *h;
+	node->prev = NULL;
+	node->next = NULL;
+	node->n = n;
 	if (idx == 0)
 	{
 		if (*h == NULL)
-			*h = new;
+			*h = node;
 		else
 		{
-			new->next = *h;
-			tmp->prev = new;
-			*h = new;
+			node->next = *h;
+			temp->prev = node;
+			*h = node;
 		}
-		return (new);
+		return (node);
 	}
 
-	while (tmp->next != NULL || counter + 1 == idx)
+	while (temp->next != NULL || count + 1 == idx)
 	{
-		if (counter + 1 == idx)
+		if (count + 1 == idx)
 		{
-			if (tmp->next != NULL)
-				tmp->next->prev = new;
-			new->next = tmp->next;
-			tmp->next = new;
-			new->prev = tmp;
-			return (new);
+			if (temp->next != NULL)
+				temp->next->prev = node;
+			node->next = temp->next;
+			temp->next = node;
+			node->prev = temp;
+			return (node);
 		}
-		tmp = tmp->next;
-		counter++;
+		temp = temp->next;
+		count++;
 	}
-	free_dlistint(new);
+	free_dlistint(node);
 	return (NULL);
 }
